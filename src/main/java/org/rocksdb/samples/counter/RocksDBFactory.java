@@ -44,6 +44,7 @@ public class RocksDBFactory {
      */
     public void incrementCounter(final byte[] key) {
       try {
+        // Perform atomic merge (read/modify/write) operation.
         db.merge(key, byteArrayOne);
       } catch (RocksDBException e) {
         throw new RuntimeException(e);

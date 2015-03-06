@@ -3,7 +3,7 @@ package org.rocksdb.samples.counter;
 import static spark.Spark.*;
 
 /**
- * Micro-service providing named counter REST interfaces. Counters
+ * Microservice providing named counter REST interfaces. Counters
  * are backed by an embedded K/V store called RocksDB.
  */
 class RocksDBCounterServiceSample {
@@ -13,7 +13,7 @@ class RocksDBCounterServiceSample {
       RocksDBFactory.rocksDBInstance("/tmp/simpleCounter");
 
   /**
-   * Run Micro-Service.
+   * Run Microservice.
    *
    * @param args command-line parameters.
    */
