@@ -6,7 +6,7 @@ import static spark.Spark.*;
  * Micro-service providing named counter REST interfaces. Counters
  * are backed by an embedded K/V store called RocksDB.
  */
-public class RocksDBCounterServiceSample {
+class RocksDBCounterServiceSample {
 
   // RocksDBSimpleClient providing counter functionality
   private static final RocksDBFactory.RocksDBSimpleClient simpleClient =

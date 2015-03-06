@@ -4,6 +4,9 @@ import org.rocksdb.Options;
 import org.rocksdb.RocksDB;
 import org.rocksdb.RocksDBException;
 
+/**
+ * Factory to provide {@link RocksDBSimpleClient} instances.
+ */
 public class RocksDBFactory {
 
   /**
@@ -65,7 +68,7 @@ public class RocksDBFactory {
     /**
      * Reset counter with name {@code key}
      *
-     * @param key
+     * @param key name of counter.
      */
     public void resetCounter(final byte[] key) {
       try {

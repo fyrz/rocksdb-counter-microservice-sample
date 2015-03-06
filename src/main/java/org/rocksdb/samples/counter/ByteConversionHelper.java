@@ -7,7 +7,7 @@ import java.nio.ByteOrder;
  * ByteConversionHelper to help in transforming long values
  * to platform-specific byte arrays and back again.
  */
-public class ByteConversionHelper {
+class ByteConversionHelper {
 
   /**
    * Transforms a long value to the platform-specific
