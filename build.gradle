@@ -17,6 +17,7 @@ ext {
     rocksdbVersion = '3.9.1'
     junitVersion = '4.11'
     assertjVersion = '1.7.1'
+    httpcomponentsVersion = '4.4'
 }
 
 mainClassName = "org.rocksdb.samples.counter.RocksDBCounterServiceSample"
@@ -33,6 +34,10 @@ dependencies {
 
     testCompile group: 'junit', name: 'junit', version: "$junitVersion"
     testCompile group: 'org.assertj', name:'assertj-core', version:"$assertjVersion"
+
+    testCompile group: 'org.apache.httpcomponents', name:'httpclient', version:"$httpcomponentsVersion"
+    testCompile group: 'org.apache.httpcomponents', name:'fluent-hc', version:"$httpcomponentsVersion"
+
 }
 
 // Add jacoco coverage
