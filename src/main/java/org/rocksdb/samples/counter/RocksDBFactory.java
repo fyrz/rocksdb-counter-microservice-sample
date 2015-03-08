@@ -7,7 +7,7 @@ import org.rocksdb.RocksDBException;
 /**
  * Factory to provide {@link RocksDBSimpleClient} instances.
  */
-public class RocksDBFactory {
+public final class RocksDBFactory {
 
   /**
    * Simple RocksDBClient to provide atomic increment, reset and get
@@ -15,7 +15,7 @@ public class RocksDBFactory {
    *
    */
   static class RocksDBSimpleClient {
-    final RocksDB db;
+    RocksDB db;
     final Options options;
 
     private static final byte[] byteArrayOne = ByteConversionHelper.longToByte(1);
@@ -90,5 +90,9 @@ public class RocksDBFactory {
    */
   public static RocksDBSimpleClient rocksDBInstance(final String path) {
     return new RocksDBSimpleClient(path);
+  }
+
+  private RocksDBFactory() {
+
   }
 }
