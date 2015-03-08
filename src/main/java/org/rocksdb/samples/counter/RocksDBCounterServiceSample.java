@@ -9,7 +9,7 @@ import static spark.Spark.*;
 class RocksDBCounterServiceSample {
 
   // RocksDBSimpleClient providing counter functionality
-  private static final RocksDBFactory.RocksDBSimpleClient simpleClient =
+  static final RocksDBFactory.RocksDBSimpleClient simpleClient =
       RocksDBFactory.rocksDBInstance("/tmp/simpleCounter");
 
   /**
