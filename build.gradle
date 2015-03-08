@@ -47,3 +47,8 @@ jacocoTestReport {
         html.enabled = true
     }
 }
+
+// Show standard streams while testing
+test {
+    testLogging.showStandardStreams = true
+}
