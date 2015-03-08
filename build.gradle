@@ -8,6 +8,7 @@ buildscript {
 apply plugin:'application'
 apply plugin: 'java'
 apply plugin: 'idea'
+apply plugin: 'jacoco'
 apply plugin: 'com.github.johnrengelman.shadow'
 
 // Definition of dependency versions
@@ -32,4 +33,12 @@ dependencies {
 
     testCompile group: 'junit', name: 'junit', version: "$junitVersion"
     testCompile group: 'org.assertj', name:'assertj-core', version:"$assertjVersion"
+}
+
+// Add jacoco coverage
+jacocoTestReport {
+    reports {
+        xml.enabled = true // coveralls plugin depends on xml format report
+        html.enabled = true
+    }
 }
