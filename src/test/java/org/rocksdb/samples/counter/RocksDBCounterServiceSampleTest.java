@@ -6,8 +6,8 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
+import org.junit.rules.TemporaryFolder;
 
 import java.io.IOException;
 
@@ -15,9 +15,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class RocksDBCounterServiceSampleTest {
 
-  @BeforeClass
-  public static void setup() {
-    RocksDBCounterServiceSample.main(new String[0]);
+  @Rule
+  public TemporaryFolder dbFolder = new TemporaryFolder();
+
+  @Before
+  public void setup() {
+    RocksDBCounterServiceSample.main(new String[]{ dbFolder.getRoot().getAbsolutePath() });
   }
 
   @Test
@@ -42,6 +45,11 @@ public class RocksDBCounterServiceSampleTest {
   @Test
   public void invalidPath() throws IOException {
     testRestInterface("nullifyCounter/testCounter", 404);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void insufficientParamsPassedToMain() {
+    RocksDBCounterServiceSample.main(new String[0]);
   }
 
   /**
