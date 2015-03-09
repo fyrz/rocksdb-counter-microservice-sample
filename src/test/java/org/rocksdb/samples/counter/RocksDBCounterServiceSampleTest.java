@@ -27,13 +27,13 @@ public class RocksDBCounterServiceSampleTest {
         .isEqualTo("");
     // counter must be zero
     assertThat(testRestInterface("getCounter/testCounter", 200))
-        .isEqualTo(String.format("%d%n",0));
+        .isEqualTo(String.format("%d%n", 0));
     // increment counter by 1
     assertThat(testRestInterface("incrementCounter/testCounter", 200))
         .isEqualTo("");
     // retrieved value must be 1
     assertThat(testRestInterface("getCounter/testCounter", 200))
-        .isEqualTo(String.format("%d%n",1));
+        .isEqualTo(String.format("%d%n", 1));
     // other counter must be zero
     assertThat(testRestInterface("getCounter/anotherCounter", 200))
         .isEqualTo(String.format("%d%n",0));
@@ -55,7 +55,7 @@ public class RocksDBCounterServiceSampleTest {
   String testRestInterface(final String path, final int expectedStatus) throws IOException {
     CloseableHttpClient httpClient = HttpClients.createDefault();
     HttpGet httpGet = new HttpGet("http://localhost:4567/"+path);
-    String responseValue = "";
+    String responseValue;
     try (CloseableHttpResponse response = httpClient.execute(httpGet)) {
       assertThat(response.getStatusLine().getStatusCode()).isEqualTo(expectedStatus);
       HttpEntity entity = response.getEntity();

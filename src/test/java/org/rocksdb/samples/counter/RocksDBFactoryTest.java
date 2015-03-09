@@ -34,8 +34,7 @@ public class RocksDBFactoryTest {
 
   @Test(expected = RuntimeException.class)
   public void runtimeExceptionIfRocksErrorOnOpen() {
-    RocksDBFactory.RocksDBSimpleClient simpleClient =
-        RocksDBFactory.rocksDBInstance("/_$$%&/((§§§§%&$&§$");
+    RocksDBFactory.rocksDBInstance("/_$$%&/((§§§§%&$&§$");
   }
 
   @Test(expected = RuntimeException.class)
