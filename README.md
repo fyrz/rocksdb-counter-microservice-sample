@@ -9,7 +9,7 @@ This sample project outlines the usage of RocksDB (using RocksJava) and a Micros
 $> ./gradlew shadow
 
 # Run application
-$> java -jar build/libs/RocksDB-Microservice-Counter-1.0-all.jar  /tmp/txx
+$> java -jar build/libs/RocksDB-Microservice-Counter-1.0-all.jar  /tmp/dbLocation
 ```
 The microservice is now available, listening to `localhost:4567`
 
