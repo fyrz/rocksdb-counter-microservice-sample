@@ -1,4 +1,4 @@
-# RocksDB Counter Microservice example
+# RocksDB Counter Microservice sample
 [![Build Status](https://travis-ci.org/fyrz/rocksdb-counter-microservice-sample.svg)](https://travis-ci.org/fyrz/rocksdb-counter-microservice-sample) [![Coverage Status](https://coveralls.io/repos/fyrz/rocksdb-counter-microservice-sample/badge.svg?branch=master)](https://coveralls.io/r/fyrz/rocksdb-counter-microservice-sample?branch=master)
 
 This sample project outlines the usage of RocksDB (using RocksJava) and a Microservice framework called Spark to provide Counter functionality via REST.
@@ -13,7 +13,7 @@ $> java -jar build/libs/RocksDB-Microservice-Counter-1.0-all.jar  /tmp/dbLocatio
 ```
 The microservice is now available, listening to `localhost:4567`
 
-## Rest interfaces
+## REST interfaces
 After starting the service, three REST interfaces are available:
 ```
 #Increment counter by 1
