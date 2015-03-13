@@ -11,10 +11,10 @@ $> ./gradlew shadow
 # Run application
 $> java -jar build/libs/RocksDB-Microservice-Counter-1.0-all.jar  /tmp/txx
 ```
-Now the microservice is available on port `4567` using the hosts IP adress.
+The microservice is now available, listening to `localhost:4567`
 
 ## Rest interfaces
-After starting the service three REST interfaces are available:
+After starting the service, three REST interfaces are available:
 ```
 #Increment counter by 1
 $> curl http://localhost:4567/incrementCounter/someCounter
