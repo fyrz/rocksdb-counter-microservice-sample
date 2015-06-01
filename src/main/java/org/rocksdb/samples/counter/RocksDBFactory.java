@@ -1,10 +1,10 @@
 package org.rocksdb.samples.counter;
 
-import org.rocksdb.Env;
+//import org.rocksdb.Env;
 import org.rocksdb.Options;
 import org.rocksdb.RocksDB;
 import org.rocksdb.RocksDBException;
-import org.rocksdb.RocksMemEnv;
+//import org.rocksdb.RocksMemEnv;
 
 /**
  * Factory to provide {@link RocksDBSimpleClient} instances.
@@ -19,7 +19,7 @@ public final class RocksDBFactory {
   static class RocksDBSimpleClient {
     RocksDB db;
     final Options options;
-    final Env env;
+    //final Env env;
 
     private static final byte[] byteArrayOne = ByteConversionHelper.longToByte(1);
 
@@ -30,11 +30,11 @@ public final class RocksDBFactory {
      */
     RocksDBSimpleClient(final String path) {
       try {
-        env = new RocksMemEnv();
+        //env = new RocksMemEnv();
         options = new Options()
             .setCreateIfMissing(true)
             .setMergeOperatorName("uint64add")
-	    .setEnv(env)
+	    //.setEnv(env)
             .setWriteBufferSize(100);
         db = RocksDB.open(options, path);
       } catch (RocksDBException e) {

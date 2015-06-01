@@ -16,7 +16,7 @@ apply plugin: 'com.github.kt3k.coveralls'
 // Definition of dependency versions
 ext {
     sparkVersion = '2.1'
-    rocksdbVersion = '3.10.1'
+    rocksdbVersion = '3.9.1'
     junitVersion = '4.11'
     assertjVersion = '1.7.1'
     httpcomponentsVersion = '4.4'
